@@ -1,0 +1,11 @@
+.alert-fail{
+    margin-left: 39%;
+    
+    margin-bottom: -57px;
+    background-color: red;
+    width: 20%;
+    padding: 22px;
+    padding-left: 77px;
+    border-radius: 10px;
+    font-style: italic;
+}

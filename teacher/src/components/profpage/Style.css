@@ -1,0 +1,10 @@
+.prof-post-info{
+    display: flex;
+    justify-content: space-around;
+    margin-right: 60px;
+}
+
+.post-position{
+    width: 500px;
+    
+}

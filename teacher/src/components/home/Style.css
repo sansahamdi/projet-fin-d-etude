@@ -1,0 +1,131 @@
+/* body {
+  background-color: #eeeeee;
+} */
+.calendre-profile {
+  position: fixed;
+ 
+  right: 20px;
+  width: 25%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.row {
+  margin-top: 90px;
+}
+
+.h7 {
+  font-size: 0.8rem;
+}
+
+.gedf-wrapper {
+  margin-top: 0.97rem;
+}
+
+.profile-card{
+  font-weight: 400;
+    border: 0;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+
+
+
+    /* position: relative; */
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+  position: fixed;
+  margin-left: -66px;
+}
+.comment{
+  height: 6px;
+}
+.name-comment{
+  color: gray;
+  font-weight: 500;
+  left:1px;
+
+}
+.comment-text{
+  border: 1px solid;
+    border-radius: 10px;
+    /* width: 126%; */
+    padding: 2px;
+    margin-left: 9px;
+    padding-right: 11px;
+    background-color: beige;
+    color: gray;
+}
+.card input{
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .gedf-main {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+  .gedf-card {
+    margin-bottom: 2.77rem;
+  }
+}
+
+/**Reset Bootstrap*/
+.dropdown-toggle::after {
+  content: none;
+  display: none;
+}
+.card-footer{
+  cursor: pointer;
+  color: rgba(0, 132, 255, 0.966);
+ 
+}
+.pointer{
+  margin-left: 10px;
+}
+
+.comment-delete{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  height: 20px;
+}
+.post-delete{
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  
+  height: 55px;
+  padding: 20px;
+
+}
+
+.notif-msg{
+  margin-top: 65px;
+  margin-left: 40px;
+  border: 1px solid;
+  padding: 20px;
+  background-color: #e2e8f0;
+  width: 90%;
+}
+
+.notification{
+  padding: 22px;
+    margin: auto;
+    /* top: 68%; */
+    height: -23%;
+    background-color: white;
+    margin-top: 130px;
+    width: 82%;
+   
+}
+
+
+.button-posts {
+  margin-left: 200px;
+ cursor: pointer;
+  color: steelblue;
+}
