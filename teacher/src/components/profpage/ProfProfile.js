@@ -21,7 +21,7 @@ const ProfProfile = ({ match }) => {
     };
 
     postProf();
-  }, [dispatch]);
+  }, [dispatch, match.params.id]);
 
   if (isLoading || !postProf || !prof) {
     return <h2>....loading</h2>;
