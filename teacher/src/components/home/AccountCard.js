@@ -7,57 +7,85 @@ export const AccountCard = ({ user }) => {
   return (
     <>
       {user.map((user) => (
-        <div className="container mb-4">
-          <div className="row">
-            <div className="col-lg-4 pb-5 content">
-              <div className="author-card pb-3 img-card">
-                <div className="author-card-profile">
-                  <div className="author-card-avatar round-img">
+        <div className="profile-card-4 z-depth-3">
+          <div className="card">
+            <div className="card-body text-center bg-primary rounded-top">
+              <div className="header">
+                <div className="ml-5">
+                  <div className="user-box">
                     <Link to="/profile/user">
-                      {" "}
                       <img
-                        style={{ width: "100%", height: "50%" }}
                         src={
                           user.img
                             ? user.img
                             : "https://bootdey.com/img/Content/avatar/avatar1.png"
                         }
-                        alt="Daniel Adams"
+                        alt="user avatar"
                       />
                     </Link>
                   </div>
-                  <div className="author-card-details">
-                    <h5 className="author-card-name text-lg">{`${user.lastName} ${user.name}`}</h5>
-                    <span className="author-card-position">2020</span>
-                  </div>
+                  <h5 className="mb-1 text-white">Jhon Doe</h5>
                 </div>
               </div>
-              <div className="wizard card-position">
-                <nav className="list-group list-group-flush">
-                  <Link className="list-group-item" to="/profile/settings">
-                    <i className="fa fa-user text-muted"></i>Profile Settings
-                  </Link>
-                </nav>
+            </div>
+            <div className="card-body">
+              <Link to="/profile/user">
+                <button className="btn btn-primary btn-block mb-1">
+                  get profile
+                </button>
+              </Link>
+              <ul className="list-group shadow-none">
+                <li className="list-group-item">
+                  <div className="header">
+                    <div>
+                      <Link to="/profile/settings">
+                        <i class="fas fa-user-cog"></i>
+                        <span>Profile Settings</span>
+                      </Link>
+                    </div>
+                  </div>
+                </li>
                 {!user.grade && !user.speciality ? (
                   ""
                 ) : (
-                  <Fragment>
-                    <hr />
-                    <p>{!user.grade.grade ? "" : user.grade.grade}</p>
-                    <hr />
-                    <p>
-                      {!user.speciality.speciality
-                        ? ""
-                        : user.speciality.speciality}
-                    </p>
-                  </Fragment>
+                  <React.Fragment>
+                    <li className="list-group-item">
+                      <div className="header">
+                        <div>
+                          <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div>
+                          <p>{!user.grade.grade ? "" : user.grade.grade}</p>
+                        </div>
+                      </div>
+                    </li>
+                    <li className="list-group-item">
+                      <div className="header">
+                        <div>
+                          <i class="fas fa-info"></i>
+                        </div>
+                        <div>
+                          <p>
+                            {!user.speciality.speciality
+                              ? ""
+                              : user.speciality.speciality}
+                          </p>
+                        </div>
+                      </div>
+                    </li>
+                  </React.Fragment>
                 )}
-                <hr />
-                <p>
-                  <i class="fas fa-phone-alt"></i>
-                  {user.phone ? " " + user.phone : " " + "phone"}
-                </p>
-              </div>
+                <li className="list-group-item">
+                  <div className="header">
+                    <div>
+                      <i class="fas fa-phone-volume"></i>
+                    </div>
+                    <div>
+                      <p>{user.phone ? " " + user.phone : " " + "phone"}</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
