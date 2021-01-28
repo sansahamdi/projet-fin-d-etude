@@ -24,7 +24,9 @@ export const AccountCard = ({ user }) => {
                       />
                     </Link>
                   </div>
-                  <h5 className="mb-1 text-white">Jhon Doe</h5>
+                  <h5 className="mb-1 text-white">
+                    {`${user.name} ${user.lastName}`}{" "}
+                  </h5>
                 </div>
               </div>
             </div>
