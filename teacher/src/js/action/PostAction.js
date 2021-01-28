@@ -1,4 +1,4 @@
-import { POST_FAIL, POST_SUCCES, DELETE_USER_POST, REMOVE_POST } from "./Type";
+import { POST_SUCCES, DELETE_USER_POST, REMOVE_POST } from "./Type";
 import axios from "axios";
 
 export const getPostById = () => async (dispatch) => {
