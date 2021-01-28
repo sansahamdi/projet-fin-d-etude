@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
-import { Header } from "./Header";
+import { CardInformation } from "./CardInformation";
 import { DateEmployee } from "./DateEmployee";
 import { GetPosts } from "./GetPosts";
 import { ProfessionalInformation } from "./ProfessionalInformation";
-import { Note } from "./Note";
 
 import { getPostById } from "../../js/action/PostAction";
 import { useDispatch, useSelector } from "react-redux";
-import "./User.css";
+// import "./User.css";
 
 export const User = () => {
   const dispatch = useDispatch();
@@ -35,7 +34,7 @@ export const User = () => {
           <div class="container flex-grow-1 container-p-y">
             <div class="container-m-nx container-m-ny theme-bg-white mb-4 head">
               {user.map((user) => (
-                <Header user={user} />
+                <CardInformation user={user} />
               ))}
               <hr class="m-0" />
             </div>
@@ -50,7 +49,6 @@ export const User = () => {
                 {user.map((user) => (
                   <ProfessionalInformation key={user._id} user={user} />
                 ))}
-                <Note />
               </div>
             </div>
           </div>

@@ -8,35 +8,54 @@ export const ProfessionalInformation = ({ user }) => {
         <div>Professional Information</div>
       </div>
       <div className="card-body">
-        <div className="header">
-          <p>Grade</p>
-          <span>{user.grade?user.grade.grade:""}</span>
-        </div>
-        <hr />
-        <div className="header">
-          <p>Level</p>
-          <span>{user.level?user.level.level:""}</span>
-        </div>
-        <hr />
-        <div className="header">
-          <p>Speciality</p>
-          <span>{user.speciality ?user.speciality.speciality:""}</span>
-        </div>
-        <hr />
-        <div className="header">
-          <p>Situation</p>
-          <span>{user.situation?user.situation.situation:""}</span>
-        </div>
-        <hr />
-        <div className="header">
-          <p>Status</p>
-          <span>{user.status?user.status:""}</span>
-        </div>
-        <hr />
-        <div className="header">
-          <p>Recruitment date</p>
-          <span>{user.recruitement_date?user.recruitement_date.slice(0, 10):""}</span>
-        </div>
+        <table className="table table-hover table-striped">
+          <tbody>
+            <tr>
+              <td className="header">
+                <strong>GRADE</strong>
+                <div>{user.grade ? user.grade.grade : "not found"}</div>
+              </td>
+            </tr>
+            <tr>
+              <td className="header">
+                <strong>LEVEL</strong>{" "}
+                <div>{user.level ? user.level.level : "not found"}</div>
+              </td>
+            </tr>
+            <tr>
+              <td className="header">
+                <strong>SPECIALITY</strong>{" "}
+                <div>
+                  {user.speciality ? user.speciality.speciality : "not found"}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td className="header">
+                <strong>SITUATION</strong>{" "}
+                <div>
+                  {user.situation ? user.situation.situation : "not found"}
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td className="header">
+                <strong>STATUS</strong>{" "}
+                <div>{user.status ? user.status : "not found"}</div>
+              </td>
+            </tr>
+            <tr>
+              <td className="header">
+                <strong>Recruitment date</strong>{" "}
+                <div>
+                  {user.recruitement_date
+                    ? user.recruitement_date.slice(0, 10)
+                    : "not found"}
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );

@@ -5,22 +5,17 @@ export const DateEmployee = ({ user }) => {
   return (
     <div className="card mb-4">
       <div className="card-header header">
-        <div>Date related to employee</div>
+        <div>Note</div>
       </div>
       <div className="card-body">
         <div className="header">
-          <p>CIN</p>
-          <span>{user.cin}</span>
+          <p>person entitled</p>
+          <span>{user.titulaire ? user.titulaire : "not found"}</span>
         </div>
         <hr />
         <div className="header">
-          <p>Sexe</p>
-          <span>{user.sexe}</span>
-        </div>
-        <hr />
-        <div className="header">
-          <p>Civil Status</p>
-          <span>{user.civil_status}</span>
+          <p>Note</p>
+          <span>{user.note ? user.note : "not found"}</span>
         </div>
       </div>
     </div>
