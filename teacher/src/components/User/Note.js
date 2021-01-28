@@ -1,7 +1,7 @@
 import React from "react";
 import "./User.css";
 
-export const Note = () => {
+export const Note = ({ user }) => {
   return (
     <React.Fragment>
       <div className="card mb-4">
@@ -11,12 +11,12 @@ export const Note = () => {
         <div className="card-body">
           <div className="header">
             <p>person entitled</p>
-            <span>14/05/1990</span>
+            <span> {user.titulaire ? user.titulaire : "not found"} </span>
           </div>
           <hr />
           <div className="header">
             <p>Note</p>
-            <span>14/05/1990</span>
+            <span> {user.note ? user.note : "not found"} </span>
           </div>
         </div>
       </div>

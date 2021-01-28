@@ -31,13 +31,12 @@ export const FilesUploadComponent = ({ user }) => {
     <div className="container">
       <div className="row">
         <form onSubmit={onSubmit}>
-          <h3>React File Upload</h3>
           <div className="form-group">
             <input type="file" onChange={onFileChange} />
           </div>
           <div className="form-group">
-            <button className="btn btn-primary" type="submit">
-              Upload
+            <button className="btn btn-dark btn-block" type="submit">
+              Save change profile
             </button>
           </div>
         </form>
