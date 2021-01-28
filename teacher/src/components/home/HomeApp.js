@@ -60,7 +60,9 @@ export const HomeApp = () => {
           <ButtonPosts />
         </div>
         <div className=" calendre-profile">
-          <Calendar />
+          <div className="card-calendar">
+            <Calendar />
+          </div>
           <Notification />
         </div>
       </div>

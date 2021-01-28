@@ -27,6 +27,11 @@ body {
   border-radius: 0.25rem;
 }
 
+.form-settings {
+  margin: auto;
+  margin-bottom: 15px;
+}
+
 .card-body {
   flex: 1 1 auto;
   min-height: 1px;
