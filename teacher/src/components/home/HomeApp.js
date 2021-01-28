@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { loadUser } from "../../js/action/authAction";
 import { getPosts, clearPosts } from "../../js/action/PostsAction";
 import ButtonPosts from "./ButtonPosts";
+
+import "react-calendar/dist/Calendar.css";
 import "./Style.css";
 
 export const HomeApp = () => {
