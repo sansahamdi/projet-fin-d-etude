@@ -33,7 +33,11 @@ export const LatestPosts = ({ post, user }) => {
             </div>
             <div className="profile-comments__body">
               <h5 className="profile-comments__sender">
-                {post.name} <small> {post.date} </small>
+                {post.name}{" "}
+                <small>
+                  {" "}
+                  {post.date ? post.date.slice(0, 10) : "not found"}{" "}
+                </small>
               </h5>
               <div className="profile-comments__content">{post.text}</div>
             </div>

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { getMessage, clearMessage } from "../../js/action/MessageAction";
+import { getMessage } from "../../js/action/MessageAction";
 
 import "./Style.css";
 
@@ -27,7 +27,7 @@ export const Notification = () => {
           you have<span className="font-weight-bold">{` ${msg.length}`}</span>
           messages from the administration
         </p>
-        {msg.length == 0 ? (
+        {msg.length === 0 ? (
           ""
         ) : (
           <Link to="/profile/all-notification">

@@ -55,7 +55,9 @@ export const HomeApp = () => {
         <div className="col-md-6 gedf-main">
           <AddPost />
           {posts.map((posts) =>
-            posts.map((posts) => <Post posts={posts} user={user} />)
+            posts.map((posts) => (
+              <Post key={posts._id} posts={posts} user={user} />
+            ))
           )}
           <ButtonPosts />
         </div>

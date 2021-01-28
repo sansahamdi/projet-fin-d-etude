@@ -1,26 +1,24 @@
-import React,{useState} from "react";
-import {useDispatch} from 'react-redux'
-import {addPost} from '../../js/action/PostsAction'
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addPost } from "../../js/action/PostsAction";
 import "./Style.css";
 
 export const AddPost = () => {
-          
-           const dispatch=useDispatch()
-          
-           const[form,setForm]=useState({
-             text:""
-           })
+  const dispatch = useDispatch();
 
-        const postAdd=(e)=>{
-          e.preventDefault()
-         
-          dispatch(addPost(form))
-          setForm({
-            text:""
-          })
-        }   
+  const [form, setForm] = useState({
+    text: "",
+  });
 
-     
+  const postAdd = (e) => {
+    e.preventDefault();
+
+    dispatch(addPost(form));
+    setForm({
+      text: "",
+    });
+  };
+
   return (
     <div className="card gedf-card">
       <div className="card-header">
@@ -30,14 +28,13 @@ export const AddPost = () => {
               Make a publication
             </a>
           </li>
-         
         </ul>
       </div>
       <div className="card-body">
         <div className="tab-content">
           <div className="tab-pane fade show active">
             <div className="form-group">
-              <label className="sr-only" for="message">
+              <label className="sr-only" htmlFor="message">
                 post
               </label>
               <textarea
@@ -45,7 +42,7 @@ export const AddPost = () => {
                 id="message"
                 rows="3"
                 value={form.text}
-                onChange={(e)=>setForm({...form,text:e.target.value})}
+                onChange={(e) => setForm({ ...form, text: e.target.value })}
                 placeholder="What are you thinking?"
               ></textarea>
             </div>
@@ -54,7 +51,7 @@ export const AddPost = () => {
             <div className="form-group">
               <div className="custom-file">
                 <input type="file" className="custom-file-input" />
-                <label className="custom-file-label" for="customFile">
+                <label className="custom-file-label" htmlFor="customFile">
                   Upload image
                 </label>
               </div>
@@ -68,7 +65,6 @@ export const AddPost = () => {
               share
             </button>
           </div>
-          
         </div>
       </div>
     </div>

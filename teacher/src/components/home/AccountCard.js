@@ -7,7 +7,7 @@ export const AccountCard = ({ user }) => {
   return (
     <>
       {user.map((user) => (
-        <div className="profile-card-4 z-depth-3">
+        <div key={user._id} className="profile-card-4 z-depth-3">
           <div className="card">
             <div className="card-body text-center bg-primary rounded-top">
               <div className="header">
@@ -41,7 +41,7 @@ export const AccountCard = ({ user }) => {
                   <div className="header">
                     <div>
                       <Link to="/profile/settings">
-                        <i class="fas fa-user-cog"></i>
+                        <i className="fas fa-user-cog"></i>
                         <span>Profile Settings</span>
                       </Link>
                     </div>
@@ -54,7 +54,7 @@ export const AccountCard = ({ user }) => {
                     <li className="list-group-item">
                       <div className="header">
                         <div>
-                          <i class="fas fa-graduation-cap"></i>
+                          <i className="fas fa-graduation-cap"></i>
                         </div>
                         <div>
                           <p>{!user.grade.grade ? "" : user.grade.grade}</p>
@@ -64,7 +64,7 @@ export const AccountCard = ({ user }) => {
                     <li className="list-group-item">
                       <div className="header">
                         <div>
-                          <i class="fas fa-info"></i>
+                          <i className="fas fa-info"></i>
                         </div>
                         <div>
                           <p>
@@ -80,10 +80,10 @@ export const AccountCard = ({ user }) => {
                 <li className="list-group-item">
                   <div className="header">
                     <div>
-                      <i class="fas fa-phone-volume"></i>
+                      <i className="fas fa-phone-volume"></i>
                     </div>
                     <div>
-                      <p>{user.phone ? " " + user.phone : " " + "phone"}</p>
+                      <p>{user.phone ? user.phone : "phone"}</p>
                     </div>
                   </div>
                 </li>

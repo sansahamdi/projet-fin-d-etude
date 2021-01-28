@@ -1,10 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { NavbarSetiings } from "./NavbarSetiings";
-import { ProfileInformation } from "./ProfileInformation";
 import Security from "./Security";
-import { Settings } from "./Settings";
-import { Notification } from "./Notification";
 import "./AccountSettings.css";
 
 export const AccountSettings = () => {

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { likePost } from "../../js/action/PostsAction";
 import { addComment, deletePost } from "../../js/action/PostsAction";
 
+import photo from "../asset/inconnu.png";
+
 import Commenter from "./Commenter";
 import "./Style.css";
 
@@ -42,13 +44,10 @@ export const Post = ({ posts, user }) => {
               {user.map((user) =>
                 user._id === posts.user ? (
                   <img
+                    key={user._id}
                     className="rounded-circle"
                     width="45"
-                    src={
-                      user.img
-                        ? user.img
-                        : "https://bootdey.com/img/Content/avatar/avatar1.png"
-                    }
+                    src={user.img ? user.img : photo}
                     alt=""
                   />
                 ) : (
@@ -57,11 +56,7 @@ export const Post = ({ posts, user }) => {
                     <img
                       className="rounded-circle"
                       width="45"
-                      src={
-                        posts
-                          ? posts.user.img
-                          : "https://bootdey.com/img/Content/avatar/avatar1.png"
-                      }
+                      src={posts.img ? posts.user.img : photo}
                       alt=""
                     />
                   </Link>
@@ -83,7 +78,7 @@ export const Post = ({ posts, user }) => {
       </div>
       <div className="card-footer post-delete">
         <p className="mt-3">
-          <i class="fas fa-thumbs-up" onClick={postLike}></i>{" "}
+          <i className="fas fa-thumbs-up" onClick={postLike}></i>{" "}
           {posts.like.length > 0 ? `${posts.like.length} like` : "like"}
           <i className="fa fa-comment pointer "></i>
           <span onClick={() => setShow(!show)}>
@@ -95,7 +90,7 @@ export const Post = ({ posts, user }) => {
         {user.map((user) =>
           user._id === posts.user ? (
             <p className="mt-3" onClick={postDelete}>
-              <i class="far fa-trash-alt "></i>
+              <i className="far fa-trash-alt "></i>
             </p>
           ) : (
             ""
@@ -105,7 +100,7 @@ export const Post = ({ posts, user }) => {
       {show && (
         <>
           {posts.comment.map((comment) => (
-            <Commenter comment={comment} postId={posts._id} />
+            <Commenter key={comment._id} comment={comment} postId={posts._id} />
           ))}
           <br />
           <form onSubmit={onSubmitcomment}>
