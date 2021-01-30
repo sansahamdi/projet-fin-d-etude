@@ -15,12 +15,13 @@ const Security = ({ history }) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const onSubmit = async (e) => {
+  const onSubmit = (e) => {
     e.preventDefault();
     if (form.newPassword !== confirm) {
       alert("confirm password incorrect");
+    } else {
+      dispatch(editPassword(form));
     }
-    await dispatch(editPassword(form));
   };
 
   return (

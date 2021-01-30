@@ -175,10 +175,13 @@ router.post("/paginate", auth, async (req, res) => {
     const option = {
       page,
       limit,
+      populate: { path: "user", select: "name" },
+      lean: true,
       sort: {
         date: -1,
       },
     };
+
     let post = await Posts.paginate({}, option);
 
     res.send(post);

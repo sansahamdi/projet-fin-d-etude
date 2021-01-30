@@ -42,7 +42,7 @@ export const Post = ({ posts, user }) => {
           <div className="d-flex justify-content-between align-items-center">
             <div className="mr-2">
               {user.map((user) =>
-                user._id === posts.user ? (
+                user._id === posts.user._id || user._id === posts.user ? (
                   <img
                     key={user._id}
                     className="rounded-circle"
@@ -51,7 +51,7 @@ export const Post = ({ posts, user }) => {
                     alt=""
                   />
                 ) : (
-                  <Link to={`/profile/${posts.user}`}>
+                  <Link to={`/profile/${posts.user._id}`}>
                     {" "}
                     <img
                       className="rounded-circle"
@@ -64,7 +64,9 @@ export const Post = ({ posts, user }) => {
               )}
             </div>
             <div className="ml-2">
-              <div className="h7 text-muted">{posts.name}</div>
+              <div className="h7 text-muted">
+                {posts.user.name ? posts.user.name : posts.name}
+              </div>
             </div>
           </div>
         </div>
@@ -88,7 +90,7 @@ export const Post = ({ posts, user }) => {
           </span>
         </p>
         {user.map((user) =>
-          user._id === posts.user ? (
+          user._id === posts.user._id || user._id === posts.user ? (
             <p className="mt-3" onClick={postDelete}>
               <i className="far fa-trash-alt "></i>
             </p>
