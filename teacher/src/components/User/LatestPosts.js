@@ -5,6 +5,7 @@ import "./User.css";
 
 export const LatestPosts = ({ post, user }) => {
   const dispatch = useDispatch();
+  let name;
 
   const deletePost = () => {
     dispatch(removePost(post._id));
@@ -21,22 +22,24 @@ export const LatestPosts = ({ post, user }) => {
             </div>
             <div className="profile-comments__avatar">
               {user.map((user) => (
-                <img
-                  src={
-                    user
-                      ? user.img
-                      : "https://bootdey.com/img/Content/avatar/avatar1.png"
-                  }
-                  alt="..."
-                />
+                <>
+                  <img
+                    src={
+                      user
+                        ? user.img
+                        : "https://bootdey.com/img/Content/avatar/avatar1.png"
+                    }
+                    alt="..."
+                  />
+                  {(name = user.name)}
+                </>
               ))}
             </div>
             <div className="profile-comments__body">
               <h5 className="profile-comments__sender">
-                {post.name}{" "}
+                {name}
                 <small>
-                  {" "}
-                  {post.date ? post.date.slice(0, 10) : "not found"}{" "}
+                  {post.date ? post.date.slice(0, 10) : "not found"}
                 </small>
               </h5>
               <div className="profile-comments__content">{post.text}</div>

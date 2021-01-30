@@ -125,6 +125,8 @@ export const CardInformation = ({ user }) => {
                   className="form-control"
                   placeholder="Enter your birthplace"
                   onChange={handleChange}
+                  value={form.placeOfBirth}
+                  name="placeOfBirth"
                 />
                 <label className="mt-3">Adress</label>
                 <input
