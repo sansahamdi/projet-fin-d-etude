@@ -3,8 +3,6 @@ const connectDB = require("./config/connectDB");
 
 const cors = require("cors");
 
-const api = require("./routes/upload");
-
 //connect on DataBase
 connectDB();
 
@@ -15,7 +13,7 @@ app.use(cors());
 
 app.use("/public", express.static("public"));
 
-app.use("/api", api);
+app.use("/api", require("./routes/upload"));
 app.use("/api/level", require("./routes/level"));
 app.use("/api/grade", require("./routes/grade"));
 app.use("/api/speciality", require("./routes/speciality"));
@@ -36,12 +34,12 @@ const port = process.env.PORT || 4000;
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-// app.use((req, res, next) => {
-//   // Error goes via `next()` method
-//   setImmediate(() => {
-//     next(new Error("Something went wrong"));
-//   });
-// });
+app.use((req, res, next) => {
+  // Error goes via `next()` method
+  setImmediate(() => {
+    next(new Error("Something went wrong"));
+  });
+});
 
 app.use(function (err, req, res, next) {
   console.error(err.message);

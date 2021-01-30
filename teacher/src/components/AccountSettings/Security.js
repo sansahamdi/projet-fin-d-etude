@@ -17,10 +17,10 @@ const Security = ({ history }) => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    await dispatch(editPassword(form));
     if (form.newPassword !== confirm) {
       alert("confirm password incorrect");
     }
+    await dispatch(editPassword(form));
   };
 
   return (
