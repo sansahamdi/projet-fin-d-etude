@@ -19,7 +19,7 @@ export const FilesUploadComponent = ({ user }) => {
     const formData = new FormData();
     formData.append("profileImg", profileImg);
     axios
-      .post("http://localhost:4000/api/user-profile", formData, {})
+      .post("http://localhost:4000/api/user-profile", formData)
       .then((res) => {
         dispatch(
           editTeacherById(user._id, { img: res.data.imgCreated.profileImg })

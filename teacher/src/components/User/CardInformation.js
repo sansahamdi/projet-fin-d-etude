@@ -112,7 +112,7 @@ export const CardInformation = ({ user }) => {
                 <input
                   type="date"
                   name="dateOfBirth"
-                  placeholder="dd-mm-yyyy"
+                  placeholder={form.dateOfBirth}
                   value={form.dateOfBirth}
                   min="1960-01-01"
                   max="2030-12-31"
