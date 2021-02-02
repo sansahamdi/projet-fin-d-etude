@@ -43,4 +43,10 @@ export const GETPROF_FAIL="GETPROF_FAIL"
 export const PAGINATE_SUCCES="PAGINATE_SUCCES"
 export const PAGINATE_FAIL="PAGINATE_FAIL"
 
+//chat type 
+export const CHAT_SUCCES ="CHAT_SUCCES"
+export const CHAT_FAIL ="CHAT_FAIL"
+
+export const POST_MSG="POST_MSG"
+
 export const LOGOUT = "LOGOUT";

@@ -5,6 +5,7 @@ import posts from './PostsReducer'
 import messages from './Message'
 import prof from './ProfReducer'
 import post from "./PostReducer";
+import userChat from "./ChatReducer"
 
 const rootReducer= combineReducers({
      
@@ -14,6 +15,7 @@ const rootReducer= combineReducers({
     messages,
     prof,
     post,
+    userChat,
 })
 
 
