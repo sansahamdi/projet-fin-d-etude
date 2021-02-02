@@ -57,7 +57,7 @@ export const AccountCard = ({ user }) => {
                           <i className="fas fa-graduation-cap"></i>
                         </div>
                         <div>
-                          <p>{!user.grade.grade ? "" : user.grade.grade}</p>
+                          <p>{!user.grade ? "" : user.grade.grade}</p>
                         </div>
                       </div>
                     </li>
@@ -68,9 +68,7 @@ export const AccountCard = ({ user }) => {
                         </div>
                         <div>
                           <p>
-                            {!user.speciality.speciality
-                              ? ""
-                              : user.speciality.speciality}
+                            {!user.speciality ? "" : user.speciality.speciality}
                           </p>
                         </div>
                       </div>

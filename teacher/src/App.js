@@ -13,6 +13,7 @@ import MessagesNotification from "./components/home/MessagesNotification";
 import ProfProfile from "./components/profpage/ProfProfile";
 import SetToken from "./headers/SetToken";
 import store from "./js/Store";
+import Chat from "./components/chat/Chat.js";
 
 if (localStorage.token) {
   SetToken(localStorage.token);
@@ -41,6 +42,7 @@ function App() {
             path="/profile/all-notification"
             component={MessagesNotification}
           />
+          <PrivateRouter path="/profile/messages" component={Chat} />
           <PrivateRouter path="/profile/:id" component={ProfProfile} />
         </Switch>
       </Router>

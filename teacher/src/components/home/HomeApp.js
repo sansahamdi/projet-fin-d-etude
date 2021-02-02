@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
 import Calendar from "react-calendar";
 import { AccountCard } from "./AccountCard";
 import { AddPost } from "./AddPost";
@@ -67,6 +68,10 @@ export const HomeApp = () => {
           </div>
           <Notification />
         </div>
+        <Link to="/profile/messages">
+          {" "}
+          <i class="fas fa-envelope link-msg"></i>{" "}
+        </Link>
       </div>
     </div>
   );
