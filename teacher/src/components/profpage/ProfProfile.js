@@ -40,7 +40,7 @@ const ProfProfile = ({ match }) => {
         <div>
           {postProf &&
             postProf.map((postProf) => (
-              <ProfPosts match={match} postProf={postProf} />
+              <ProfPosts match={match} postProf={postProf} prof={prof} />
             ))}
         </div>
       </div>

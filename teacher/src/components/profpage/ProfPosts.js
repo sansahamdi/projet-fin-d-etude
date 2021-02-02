@@ -5,7 +5,7 @@ import Commenter from "../home/Commenter";
 
 import { likePost } from "../../js/action/ProfAction";
 import "./Style.css";
-const ProfpostProf = ({ postProf }) => {
+const ProfpostProf = ({ postProf, prof }) => {
   const dispatch = useDispatch();
 
   const [like, setLike] = useState(true);
@@ -46,7 +46,9 @@ const ProfpostProf = ({ postProf }) => {
                 />
               </div>
               <div className="ml-2">
-                <div className="h7 text-muted">{postProf.name}</div>
+                {prof.map((prof) => (
+                  <div className="h7 text-muted">{prof.name}</div>
+                ))}
               </div>
             </div>
           </div>
