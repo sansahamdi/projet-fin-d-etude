@@ -3,13 +3,16 @@ import { useSelector, useDispatch } from "react-redux";
 import ProfInformation from "./ProfInformation";
 import { getPostProf, getProf } from "../../js/action/ProfAction";
 import ProfPosts from "./ProfPosts";
-import "./Style.css";
+import { getProfChat } from "../../js/action/ChatAction";
 import { HeaderProf } from "./HeaderProf";
+
+import "./Style.css";
 
 const ProfProfile = ({ match }) => {
   const postProf = useSelector((state) => state.prof.profPost);
   const isLoading = useSelector((state) => state.prof.isLoading);
   const prof = useSelector((state) => state.prof.prof);
+  const profChat = useSelector((state) => state.userChat.profChat);
 
   const dispatch = useDispatch();
 
@@ -21,9 +24,10 @@ const ProfProfile = ({ match }) => {
     };
 
     postProf();
+    dispatch(getProfChat(match.params.id));
   }, [dispatch, match.params.id]);
 
-  if (isLoading || !postProf || !prof) {
+  if (isLoading || !postProf || !prof || profChat === null) {
     return <h2>....loading</h2>;
   }
 

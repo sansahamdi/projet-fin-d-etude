@@ -30,23 +30,26 @@ export const EDIT_TEACHER = "EDIT_TEACHER";
 
 export const EDIT_PASSWORD = "EDIT_PASSWORD";
 
-export const POSTPROF_SUCCES="POSTPROF_SUCCES"
-export const POSTPROF_FAIL="POSTPROF_FAIL"
+export const POSTPROF_SUCCES = "POSTPROF_SUCCES";
+export const POSTPROF_FAIL = "POSTPROF_FAIL";
 
-export const LIKE_POSTPROF="LIKE_POSTPROF"
-export const ADD_COMMENTPROF="ADD_COMMENTPROF"
-export const REMOVE_COMMENTPROF="REMOVE_COMMENTPROF"
+export const LIKE_POSTPROF = "LIKE_POSTPROF";
+export const ADD_COMMENTPROF = "ADD_COMMENTPROF";
+export const REMOVE_COMMENTPROF = "REMOVE_COMMENTPROF";
 
-export const GETPROF_ID="GETPROF_ID"
-export const GETPROF_FAIL="GETPROF_FAIL"
+export const GETPROF_ID = "GETPROF_ID";
+export const GETPROF_FAIL = "GETPROF_FAIL";
 
-export const PAGINATE_SUCCES="PAGINATE_SUCCES"
-export const PAGINATE_FAIL="PAGINATE_FAIL"
+export const PAGINATE_SUCCES = "PAGINATE_SUCCES";
+export const PAGINATE_FAIL = "PAGINATE_FAIL";
 
-//chat type 
-export const CHAT_SUCCES ="CHAT_SUCCES"
-export const CHAT_FAIL ="CHAT_FAIL"
+//chat type
+export const CHAT_SUCCES = "CHAT_SUCCES";
+export const CHAT_FAIL = "CHAT_FAIL";
 
-export const POST_MSG="POST_MSG"
+export const CHAT_PROF_SUCCES = "CHAT_PROF_SUCCES";
+export const CHAT_PROF_FAIL = "CHAT_PROF_FAIL";
+
+export const POST_MSG = "POST_MSG";
 
 export const LOGOUT = "LOGOUT";
