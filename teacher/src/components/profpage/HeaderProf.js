@@ -1,4 +1,5 @@
 import React from "react";
+import SendMessageProf from "./SendMessageProf";
 
 export const HeaderProf = ({ prof, postProf }) => {
   return (
@@ -19,6 +20,7 @@ export const HeaderProf = ({ prof, postProf }) => {
               </div>
               <h5 className="mb-1 text-white">{prof.name}</h5>
             </div>
+            <SendMessageProf profId={prof._id} />
           </div>
         </div>
         <div className="card-body">
