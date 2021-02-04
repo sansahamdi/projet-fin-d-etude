@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUserChat } from "../../js/action/ChatAction";
 import ChatMessages from "./ChatMessages";
 import ChatName from "./chatName";
+import message from "../asset/messages.png";
 
 import "./Style.css";
 
@@ -41,7 +42,6 @@ const Chat = () => {
               </div>
             </div>
           </div>
-          {/*  */}
           <div className="chat-position">
             <Route
               path="/profile/messages/:id"
@@ -49,8 +49,16 @@ const Chat = () => {
                 <ChatMessages chats={chats} user={user} {...props} />
               )}
             />
+            <Route
+              exact
+              path="/profile/messages"
+              render={() => (
+                <div className="img-msg">
+                  <img src={message} alt="messages" />
+                </div>
+              )}
+            />
           </div>
-          {/*  */}
         </div>
       </div>
     </div>
