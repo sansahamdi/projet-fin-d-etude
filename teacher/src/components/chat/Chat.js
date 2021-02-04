@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserChat } from "../../js/action/ChatAction";
@@ -11,8 +11,6 @@ const Chat = () => {
   const user = useSelector((state) => state.authReducer.user);
   const chats = useSelector((state) => state.userChat.chats);
   const loading = useSelector((state) => state.userChat.loading);
-
- 
 
   const dispatch = useDispatch();
 
@@ -39,11 +37,7 @@ const Chat = () => {
                 <hr />
                 {chats === null
                   ? "messages not found"
-                  : chats.map((chat) => (
-                   
-                  <ChatName  chat={chat} user={user} />
-                  )
-                  )}
+                  : chats.map((chat) => <ChatName chat={chat} user={user} />)}
               </div>
             </div>
           </div>
@@ -55,7 +49,6 @@ const Chat = () => {
                 <ChatMessages chats={chats} user={user} {...props} />
               )}
             />
-           
           </div>
           {/*  */}
         </div>
