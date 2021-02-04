@@ -1,5 +1,6 @@
 const express = require("express");
 const connectDB = require("./config/connectDB");
+const path = require("path");
 
 const cors = require("cors");
 
@@ -29,6 +30,16 @@ app.use("/api/note", require("./routes/note"));
 app.use("/api/secteur", require("./routes/sector"));
 app.use("/api/inspecteur", require("./routes/inspector"));
 app.use("/api/discussion", require("./routes/chats"));
+
+// Serve static assets in production
+if (process.env.NODE_ENV === "production") {
+  // Set static folder
+  app.use(express.static("teacher/build"));
+
+  app.get("*", (req, res) => {
+    res.sendFile(path, resolve(__dirname, "teacher", "build", "index.html"));
+  });
+}
 
 const port = process.env.PORT || 4000;
 

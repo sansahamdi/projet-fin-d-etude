@@ -9,7 +9,8 @@
     "client": "npm start --prefix client",
     "teacher": "npm start --prefix teacher",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "go": "concurrently \"npm run server\" \"npm run teacher\""
+    "go": "concurrently \"npm run server\" \"npm run teacher\"",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix teacher && npm run build --prefix teacher"
   },
   "author": "",
   "license": "ISC",
