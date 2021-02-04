@@ -244,3 +244,7 @@ a.lien {
 ul li {
   list-style: none;
 }
+
+.img-msg {
+  margin: 51px 220px;
+}
