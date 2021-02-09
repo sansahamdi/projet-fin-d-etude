@@ -34,12 +34,12 @@ const port = process.env.PORT || 4000;
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-app.use((req, res, next) => {
+/* app.use((req, res, next) => {
   // Error goes via `next()` method
   setImmediate(() => {
     next(new Error("Something went wrong"));
   });
-});
+}); */
 
 app.use(function (err, req, res, next) {
   console.error(err.message);

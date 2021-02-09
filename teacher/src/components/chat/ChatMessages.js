@@ -3,6 +3,8 @@ import React, { Fragment, useRef, useEffect } from "react";
 import SendMessage from "./SendMessage";
 import "./Style.css";
 
+
+
 const AlwaysScrollToBottom = () => {
   const elementRef = useRef();
   useEffect(() => elementRef.current.scrollIntoView());
@@ -12,9 +14,7 @@ const AlwaysScrollToBottom = () => {
 const ChatMessages = ({ chats, match, user }) => {
   const msg = chats.find((msg) => msg._id === match.params.id);
 
-  /* useEffect(() => {
-      scrollToBottom()
-    }, []); */
+  
 
   let profName;
 

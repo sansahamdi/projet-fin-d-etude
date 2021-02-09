@@ -17,7 +17,8 @@ const Chat = () => {
 
   useEffect(() => {
     dispatch(getUserChat());
-  }, [dispatch]);
+    
+  });
 
   if (loading && !chats) {
     return <p>....loading</p>;

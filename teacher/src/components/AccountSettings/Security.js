@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { editPassword } from "../../js/action/EditTeacher";
 import "./AccountSettings.css";
 
-const Security = ({ history }) => {
+const Security = () => {
   const dispatch = useDispatch();
   const [form, setForm] = useState({
     password: "",
