@@ -10,6 +10,7 @@ const initialState = {
   chats: [],
   loading: true,
   profChat: null,
+  counter:0,
 };
 
 const reducer = (state = initialState, action) => {
@@ -19,6 +20,7 @@ const reducer = (state = initialState, action) => {
       return { ...state, chats: payload, loading: false };
     case CHAT_FAIL:
       return { ...state, chats: null, loading: false };
+
     case POST_MSG:
       return {
         ...state,
@@ -27,6 +29,18 @@ const reducer = (state = initialState, action) => {
         ),
 
         loading: false,
+      };
+    case "GETMESSAGES":
+      return {
+        ...state,
+        chats: state.chats.map((chats) =>
+          (chats.owner._id===payload.owner ||chats.to._id===payload.owner  ) &&
+          (chats.to._id === payload.to || chats.owner._id === payload.to)
+            ? { ...chats, msg: [...chats.msg, payload] }
+            : chats
+        ),
+        loading: false,
+        counter:state.counter+1
       };
     case CHAT_PROF_SUCCES:
       return { ...state, profChat: payload };

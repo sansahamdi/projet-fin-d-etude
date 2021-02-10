@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
+
 import { useDispatch, useSelector } from "react-redux";
 import { getUserChat } from "../../js/action/ChatAction";
 import ChatMessages from "./ChatMessages";
@@ -8,21 +9,25 @@ import message from "../asset/messages.png";
 
 import "./Style.css";
 
+
+
 const Chat = () => {
   const user = useSelector((state) => state.authReducer.user);
   const chats = useSelector((state) => state.userChat.chats);
   const loading = useSelector((state) => state.userChat.loading);
 
   const dispatch = useDispatch();
+  
 
-  useEffect(() => {
+   useEffect(() => {
     dispatch(getUserChat());
     
-  });
+  },[dispatch]); 
 
   if (loading && !chats) {
     return <p>....loading</p>;
   }
+    
 
   return (
     <div className="chat-page ">

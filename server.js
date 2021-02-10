@@ -1,12 +1,26 @@
 const express = require("express");
 const connectDB = require("./config/connectDB");
 
+const app = express();
+const  http =require("http")
+const server=http.createServer(app)
 const cors = require("cors");
+const socketIo= require("socket.io")(server, {
+  cors:true,
+  origins:["*"],
+ }
+ );
 
+
+const  Message=require('./models/Messages')
+const  Posts=require('./models/Posts')
 //connect on DataBase
 connectDB();
 
-const app = express();
+
+
+
+
 
 app.use(express.json());
 app.use(cors());
@@ -32,7 +46,22 @@ app.use("/api/discussion", require("./routes/chats"));
 
 const port = process.env.PORT || 4000;
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+
+
+socketIo.on('connection', (socket) => {
+  Message.removeListener('add', () => {});
+  Message.addListener('add', (messageData, to) => {
+    console.log('user the should be only reciving the notif', to);
+    socket.emit(`add_message_${to}`, messageData);
+  });
+   
+
+});
+
+
+
+
+server.listen(port, () => console.log(`Listening on port ${port}`));
 
 /* app.use((req, res, next) => {
   // Error goes via `next()` method

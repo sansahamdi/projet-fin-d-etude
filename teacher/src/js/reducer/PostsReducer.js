@@ -45,6 +45,7 @@ const reducer = (state = initailState, action) => {
              return {...state,
                  posts:state.posts.map(post=>post.map(post=>post._id===payload.idPost?{...post,comment:post.comment.filter(comment=>comment._id.toString()!==payload.idComment)}:post))
                 } 
+          case "ADDPOST_SOCKET":     
           case ADD_POST:
               return {...state,posts:state.posts.map(post=>[payload,...post])}
           case REMOVE_POST:

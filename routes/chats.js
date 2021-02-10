@@ -29,7 +29,9 @@ router.post(
           to: id,
         });
         await message.save();
+        
         res.send(message);
+
       } else {
         message = await Message.findOneAndUpdate(
           { _id: chatId },
@@ -38,8 +40,13 @@ router.post(
         const newMsg = { text, owner: user._id, to: id };
         message.msg.push(newMsg);
         await message.save();
+        Message.emit("add",newMsg,id)
         res.send(message.msg);
+       
       }
+     
+        
+
     } catch (err) {
       if (err.kind === "ObjectId") {
         res.status(400).send([{ msg: "chat not found" }]);

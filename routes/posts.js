@@ -24,9 +24,10 @@ router.post("/", [
         user: req.user.id,
         name: prof.name,
       });
-
+      
       await newPost.save();
       res.send(newPost);
+      Posts.emit('addPost',newPost)
     } catch (err) {
       res.status(500).send([{ msg: "server error" }]);
     }
@@ -40,6 +41,7 @@ router.delete("/delete/:_id", auth, async (req, res) => {
     const postRemove = await Posts.findOneAndDelete({ _id });
 
     res.send(postRemove);
+    Posts.emit('deletePost',postRemove)
   } catch (err) {
     res.status(500).send([{ msg: "server error" }]);
   }

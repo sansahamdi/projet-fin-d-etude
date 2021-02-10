@@ -2,21 +2,22 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 
+
 import { postMessageChat } from "../../js/action/ChatAction";
+
 
 
 
 const SendMessage = ({ chatId, user, msg }) => {
   const dispatch = useDispatch();
 
+  
   const [profId, setProfId] = useState();
   const [form, setForm] = useState({
     text: "",
   });
-  /* const [chat,setChat] = useState({
-    message: "",
-    name:user.name,
-  }); */
+  
+  
 
   useEffect( () => {
     let prof;
@@ -32,7 +33,7 @@ const SendMessage = ({ chatId, user, msg }) => {
     
     setProfId(prof);
   }, []);
-
+  
  
 
   const onSubmit = (e) => {

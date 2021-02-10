@@ -18,8 +18,8 @@ export const HomeApp = () => {
   const loading = useSelector((state) => state.authReducer.loading);
   const posts = useSelector((state) => state.posts.posts);
   const isLoading = useSelector((state) => state.posts.loading);
-  // const post = useSelector((state) => state.post.userPost);
-
+  const  counter = useSelector((state) => state.userChat. counter);
+  console.log(counter)
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export const HomeApp = () => {
           <Notification />
         </div>
         <Link to="/profile/messages">
-          {" "}
+          {counter>0?counter:""}
           <i class="fas fa-envelope link-msg"></i>{" "}
         </Link>
       </div>
