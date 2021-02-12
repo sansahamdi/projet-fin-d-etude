@@ -8,42 +8,38 @@ import { postMessageChat } from "../../js/action/ChatAction";
 
 
 
-const SendMessage = ({ chatId, user, msg }) => {
+const SendMessage = ({ chatId,profId }) => {
   const dispatch = useDispatch();
 
-  
-  const [profId, setProfId] = useState();
+  console.log(profId)
+ 
   const [form, setForm] = useState({
     text: "",
   });
   
   
-
-  useEffect( () => {
-    let prof;
-    
-     
-    const message =  msg;
-    if (user._id === message.owner._id) {
-      prof = message.to._id;
-    } else {
-      prof = message.owner._id;
-    }
+ /*  const [id, setId] = useState()
+   console.log(id)
   
-    
-    setProfId(prof);
-  }, []);
+    useEffect(() => {
+      setId(profId)
+    }, [profId])
+   
+  
+    console.log(id)
+     */
+   
+ 
   
  
 
   const onSubmit = (e) => {
     e.preventDefault();
-    dispatch(postMessageChat(chatId, profId, form));
+    dispatch(postMessageChat(chatId,profId, form));
     setForm({
       text: "",
     }); 
-   /*  const {message,name}=chat
-    socket.emit("messages",{name,message}) */
+  
   };
          
   return (

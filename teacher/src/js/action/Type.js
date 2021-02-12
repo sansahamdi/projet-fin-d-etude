@@ -50,6 +50,9 @@ export const CHAT_FAIL = "CHAT_FAIL";
 export const CHAT_PROF_SUCCES = "CHAT_PROF_SUCCES";
 export const CHAT_PROF_FAIL = "CHAT_PROF_FAIL";
 
+export const  CLEAR_CHAT=" CLEAR_CHAT"
+
 export const POST_MSG = "POST_MSG";
+export const UP_READ_SUCCES=" UP_READ_SUCCES"
 
 export const LOGOUT = "LOGOUT";

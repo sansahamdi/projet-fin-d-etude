@@ -4,13 +4,14 @@ import {
   POST_MSG,
   CHAT_PROF_SUCCES,
   CHAT_PROF_FAIL,
+  CLEAR_CHAT
 } from "../action/Type";
 
 const initialState = {
   chats: [],
   loading: true,
   profChat: null,
-  counter:0,
+ 
 };
 
 const reducer = (state = initialState, action) => {
@@ -21,11 +22,13 @@ const reducer = (state = initialState, action) => {
     case CHAT_FAIL:
       return { ...state, chats: null, loading: false };
 
-    case POST_MSG:
+    case  CLEAR_CHAT:
+      return { ...state, chats:[], loading: true };
+      case POST_MSG:
       return {
         ...state,
         chats: state.chats.map((chats) =>
-          chats._id === payload.chatId ? { ...chats, msg: payload.msg } : chats
+          chats._id === payload.chatId ? {...chats, msg: payload.msg } : chats
         ),
 
         loading: false,
@@ -40,7 +43,7 @@ const reducer = (state = initialState, action) => {
             : chats
         ),
         loading: false,
-        counter:state.counter+1
+       
       };
     case CHAT_PROF_SUCCES:
       return { ...state, profChat: payload };

@@ -41,6 +41,7 @@ router.post(
         message.msg.push(newMsg);
         await message.save();
         Message.emit("add",newMsg,id)
+        
         res.send(message.msg);
        
       }
@@ -120,5 +121,36 @@ router.get("/all", auth, async (req, res) => {
     res.status(500).send([{ msg: "server error" }]);
   }
 });
+
+//http://localhost:4000//api/discussion * update readed *private
+router.put('/:chatId',auth,async(req,res)=>{
+  const {chatId}=req.params
+  try {
+       const chat= await Message.findById(chatId)
+       if(!chat){ return res.status(400).send([{msg:"chat not found"}]) }
+       const readed =chat.readed
+       chat.readed=!readed
+       await chat.save()
+       res.send(chat)
+
+  } catch (err) {
+    res.status(500).send([{msg:"server error"}])
+  }
+})
+//http://localhost:4000//api/discussion * update readed *private
+router.put('/cancel/:chatId',auth,async(req,res)=>{
+  const {chatId}=req.params
+  try {
+       const chat= await Message.findById(chatId)
+       if(!chat){ return res.status(400).send([{msg:"chat not found"}]) }
+       
+       chat.readed=true
+       await chat.save()
+       res.send(chat)
+
+  } catch (err) {
+    res.status(500).send([{msg:"server error"}])
+  }
+})
 
 module.exports = router;

@@ -13,20 +13,23 @@ const AlwaysScrollToBottom = () => {
 
 const ChatMessages = ({ chats, match, user }) => {
   const msg = chats.find((msg) => msg._id === match.params.id);
-
+  
   
 
-  let profName;
-
+ 
   if (!msg || !user) {
     return <p>....loading</p>;
   }
 
+  let profName;
+  let profId;
   for (let i = 0; i < user.length; i++) {
     if (user[i]._id === msg.owner._id) {
       profName = msg.to.name;
+      profId = msg.to._id;
     } else {
       profName = msg.owner.name;
+      profId = msg.owner._id;
     }
   }
 
@@ -70,7 +73,7 @@ const ChatMessages = ({ chats, match, user }) => {
           ))}
 
       {user.map((user) => (
-        <SendMessage chatId={match.params.id} user={user} msg={msg} />
+        <SendMessage chatId={match.params.id} user={user} msg={msg} profId={profId} />
       ))}
     </>
   );

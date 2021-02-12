@@ -9,7 +9,7 @@ export const loginSucces=(form)=> async dispatch =>{
     try {
         const res= await axios.post("http://localhost:4000/api/prof/me/auth",form)
         
-       console.log(res.data)
+      
         dispatch({
             type:LOGIN_SUCCES,
             payload :res.data

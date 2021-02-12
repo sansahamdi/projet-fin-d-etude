@@ -4,6 +4,8 @@ import {
   POST_MSG,
   CHAT_PROF_FAIL,
   CHAT_PROF_SUCCES,
+  CLEAR_CHAT,
+  UP_READ_SUCCES
 } from "./Type";
 import axios from "axios";
 
@@ -70,6 +72,24 @@ export const getProfChat = (id) => async (dispatch) => {
 
 export const clearChat = () => (dispatch) => {
   dispatch({
-    type: CHAT_FAIL,
+    type: CLEAR_CHAT,
   });
 };
+
+
+export const readedChat=(chatId)=> async dispatch=>{
+  try {
+      const res=await axios.put(`http://localhost:4000/api/discussion/${chatId}`)
+      dispatch({
+        type:UP_READ_SUCCES,
+        payload:res.data
+      })
+      alert("readed edit")
+  } catch (err) {
+    console.log(err.response.data);
+    const error = err.response.data;
+    if (Array.isArray(error)) {
+      error.forEach((err) => alert(err.msg));
+    }
+  }
+}

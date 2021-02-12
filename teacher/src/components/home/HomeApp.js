@@ -69,7 +69,7 @@ export const HomeApp = () => {
           <Notification />
         </div>
         <Link to="/profile/messages">
-          {counter>0?counter:""}
+          {""}
           <i class="fas fa-envelope link-msg"></i>{" "}
         </Link>
       </div>

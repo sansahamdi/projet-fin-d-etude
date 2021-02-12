@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Route } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getUserChat } from "../../js/action/ChatAction";
+import { getUserChat,clearChat } from "../../js/action/ChatAction";
 import ChatMessages from "./ChatMessages";
 import ChatName from "./chatName";
 import message from "../asset/messages.png";
@@ -21,7 +21,9 @@ const Chat = () => {
 
    useEffect(() => {
     dispatch(getUserChat());
-    
+    return ()=>{
+      dispatch(clearChat())
+    }
   },[dispatch]); 
 
   if (loading && !chats) {

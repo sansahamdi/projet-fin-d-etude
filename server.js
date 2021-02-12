@@ -49,12 +49,13 @@ const port = process.env.PORT || 4000;
 
 
 socketIo.on('connection', (socket) => {
-  Message.removeListener('add', () => {});
+  
   Message.addListener('add', (messageData, to) => {
-    console.log('user the should be only reciving the notif', to);
+    console.log(messageData);
     socket.emit(`add_message_${to}`, messageData);
+    
   });
-   
+  Message.removeListener('add', () => {});   
 
 });
 
